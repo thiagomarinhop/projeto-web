@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>WebAval</title>
+	<link href="estilo.css" rel="stylesheet" type="text/css" />
+</h:head>
+
+<body>
+	<ui:debug hotkey="x"
+		rendered="#{initParam['javax.faces.FACELETS_DEVELOPMENT']}" />
+
+	<div id="box">
+		<div id="header">
+<!-- 			<p:layoutUnit position="north" size="68" id="north"> -->
+				<ui:insert name="header">
+					<!--  include your header file or uncomment the include below and create header.xhtml in this directory -->
+					<!-- 	    	<ui:include src="/WEB-INF/Template/header.xhtml"/> -->
+
+          AREA DO CABEÇALHO!!!!
+	    </ui:insert>
+<!-- 			</p:layoutUnit> -->
+		</div>
+
+
+		
+
+		<div id="content">
+<!-- 			<p:layoutUnit position="center"> -->
+				<ui:insert name="content">
+    	AREA DO CONTEUDO!!!!
+    	<!--  include your content file or uncomment the include below and create content.xhtml in this directory -->
+					<div>
+						<!--     	<ui:include src="content.xhtml"/>   -->
+					</div>
+				</ui:insert>
+<!-- 			</p:layoutUnit> -->
+		</div>
+
+		<div id="footer">
+<!-- 			<p:layoutUnit position="south" resizable="true" id="south"> -->
+				<ui:insert name="footer">
+					<!--  include your header file or uncomment the include below and create footer.xhtml in this directory -->
+					<!-- 			<ui:include src="/WEB-INF/Template/footer.xhtml"/> -->
+      AREA DO RODAPÉ!!!!
+	  </ui:insert>
+<!-- 			</p:layoutUnit> -->
+		</div>
+
+	</div>
+</body>
+
+</html>

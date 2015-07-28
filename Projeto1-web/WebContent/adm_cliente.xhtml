@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>PRINCIPAL</title>
+</h:head>
+<h:body>
+
+	<ui:composition template="WEB-INF/Template/templateMenu.xhtml">
+
+	<ui:define name="content">
+	<div id="conteudo">
+		<h:form id="Form_admcli">
+		
+		<p:growl id="growl" showDetail="true"  />
+			<h:panelGrid columns="5">
+			
+			    <h:outputLabel for="id" value="Código do Cliente"/>
+				<p:inputText id="id" value="#{clientemb.cliente.id}" label="Código do Cliente" />
+			
+				<h:outputLabel for="nome" value="Nome"/>
+				<p:inputText id="nome" value="#{clientemb.cliente.nome}" label="Nome" />
+								
+				<p:commandButton action="#{clientemb.inserir}" value="Consultar" update="growl" resetValues="true"  />
+			</h:panelGrid>
+		
+		<p/>
+		<p:dataTable var="cliente" value="#{clientemb.clientes}" rowKey="#{cliente.id}" paginator="8">
+			<f:facet name="header">Lista de Clientes</f:facet>
+				<p:column sortBy="#{cliente.id}">
+					<f:facet name="header">
+						<h:outputText value="Codigo do Cliente"/>
+					</f:facet>
+					<h:outputText value="#{cliente.id}" />
+				</p:column>
+				<p:column sortBy="#{cliente.nome}">
+					<f:facet name="header">
+						<h:outputText value="Nome"/>
+					</f:facet>
+					<h:outputText value="#{cliente.nome}" />
+				</p:column>
+				<p:column sortBy="#{cliente.idade}">
+					<f:facet name="header">
+						<h:outputText value="Idade"/>
+					</f:facet>
+					<h:outputText value="#{cliente.idade}" />
+				</p:column>				
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Alterar"/>
+					</f:facet>
+					<h:outputText value="#" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Excluir"/>
+					</f:facet>
+					<h:outputText value="#" />
+				</p:column>
+		</p:dataTable>
+		</h:form>
+	</div>
+	</ui:define>
+	
+	<ui:define name="footer">@Copy Ryght by Sr. Pinto - Aperfeiçoamento de conhecimento</ui:define>
+	
+	</ui:composition>
+
+
+</h:body>
+</html>
